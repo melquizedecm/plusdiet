@@ -58,7 +58,7 @@
 				$logged_in_user_id = mysqli_insert_id($db);
 				$_SESSION['user'] = getUserById($logged_in_user_id); // poner usuario registrado en sesión
 				$_SESSION['success']  = "You are now logged in";
-				header('location: index.php');				
+				header('location: index.html');				
 			}
 		}
 	}
