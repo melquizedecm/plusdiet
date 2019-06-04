@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geolocation</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 6
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDREk_YdULofxlx4E8Ka98yR5Ut7GgJFrU&callback=initMap">
+    </script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?3.39"></script>
+</head>
+<body>
+  <dir id="mapa" style="width: 700px: height:500px;"></dir>
+  <script type="text/javascript">
+    var divMapa = document.getElementById('mapa');
+    navigator.geolocation.getCurrentPosition(fn_ok, fn_mal);
+    function fn_mal(){}
+    function fn_ok(rta){
+      var lat = rta.coords.latitude;
+      var lon = rta.coords.longitude;
+
+      var gLatLon = new google.maps.LatLng(lat, lon);
+      var objConfig = {
+        zoom: 17,
+        center: gLatLon 
+      }
+      var gMapa = new google.maps.Map(divMapa, objConfig);
+      var objConfigMarker ={
+        position: gLatLon,
+        animation: google.map.Animation.DROP,
+        map:gMapa,
+        draggable:true,
+        title:'Mi Ubicación';
+      }
+      var gMarker = new google.maps.Marker(objConfigMarker);
+      //gMarkerDV.setIcon('/images/logo.png')
+      var gCoder = new google.maps.Geocoder();
+      var objInformacion={
+        address:'DIET'
+      }
+      gCoder.geocode(objInformacion, fn_coder);
+      function fn_coder(datos){
+        var coordenadas = datos [0].geometry.location;
+        var config = {
+          map:gMapa,
+          animation: google.maps.Animation.DROP,
+          position:coordenadas,
+          title: 'Diet'
+        }
+        var gMarkerDV = new google.maps.Marker(config)
+
+        var objHTML ={
+          content:'<div style="height:150px; width:300px;"><h2>Diet</h2><h3>Abierta de L-D 7am Hasta las 4pm</h3><p>Informes<a href="http://diet.ingesistemas.net/">acá</a></p></div>'
+        }
+        var gIW = new google.maps.InfoWindwos(objHTML);
+        google.maps.event.addListtener(gMarkerDV, 'click', function(){
+          gIW.open(gMapa, gMarkerDV);
+        });
+      }
+      var objConfigDR ={
+        map:gMapa,
+        suppressMarkers: true
+      }
+      var objConfigDS = {
+        origin:gLatLon,
+        destination:objInformacion.address,
+        travelMode:google.maps.TravelMode.DRIVING
+      }
+      var ds = new google.maps.DirectionsService();
+      var dr = new google.maps.DirectionsRenderer(objConfigDR);
+      ds.route(objConfigDS, fnRutear);
+      function fnRutear(resultados,status){
+        if (status == 'OK') {
+          dr.setDirections(resultados);
+        }else{
+          alert('Error'+status);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
