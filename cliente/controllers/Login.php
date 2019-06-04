@@ -58,7 +58,7 @@
 				$logged_in_user_id = mysqli_insert_id($db);
 				$_SESSION['user'] = getUserById($logged_in_user_id); // poner usuario registrado en sesión
 				$_SESSION['success']  = "You are now logged in";
-				header('location: index.html');				
+				header('location: index.php');				
 			}
 		}
 	}
@@ -103,7 +103,7 @@
 
 					$_SESSION['user'] = $logged_in_user;
 					$_SESSION['success']  = "Ahora está conectado";
-					header('location: ../views/inicio.php');		  
+					header('location: ../views/index.html');		  
 				}else{
 					$_SESSION['user'] = $logged_in_user;
 					$_SESSION['success']  = "No está conectado";
