@@ -30,7 +30,8 @@
 						<br>
 						<img src="images/logo.png" width="100" height="100" class="animated infinite pulse">
 						<br>
-						<br>
+                                                <br>
+                                                <br>
 						<br>
 						<br>
 						<br>
