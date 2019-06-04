@@ -20,7 +20,7 @@
 <body>	
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100">
+			<div class="">
 				<div style="background-image:url(images/fondo.jpg)">
 					<span class="login100-form-title p-b-48">
 						<br>
@@ -30,8 +30,7 @@
 						<br>
 						<img src="images/logo.png" width="100" height="100" class="animated infinite pulse">
 						<br>
-                                                <br>
-                                                <br>
+						<br>
 						<br>
 						<br>
 						<br>
@@ -55,4 +54,4 @@
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 </body>
-</html>	
+</html>

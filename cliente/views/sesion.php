@@ -48,7 +48,7 @@
 			<span class="txt1">
 			¿No tienes una cuenta?
 			</span>
-			<a class="txt2" href="registro.php" style="color:#02b317">
+			<a class="txt2" href="registro.php" style="color:#6B9D3D">
 			Regístrate
 			</a>
 		</div>

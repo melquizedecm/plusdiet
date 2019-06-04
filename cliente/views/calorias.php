@@ -31,7 +31,7 @@
 		<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-					<center><h3 style="color:#02b317">Consumo De Calorias</h3></center>
+					<center><h3 style="color:#6B9D3D">Consumo De Calorias</h3></center>
 					<br>
 					<br>
 					<center><div>
@@ -43,7 +43,7 @@
 						</div>
 						<div class="wrap-input100 validate-input" data-validate = "Talla Requerido">
 							<input class="input100" type="number" id="talla" value="">
-							<label class="focus-input100" data-placeholder="Talla (m):"></label>
+							<label class="focus-input100" data-placeholder="Altura (m):"></label>
 						</div>
 						<h4 class="menu_c">Total de calorias</h4>
 						<br>						
@@ -58,7 +58,7 @@
 						 var t=parseFloat(document.getElementById("peso").value);
 						 var x=parseFloat(z*y).toFixed(2);
 						 v=parseFloat(t/x).toFixed(1);
-						 document.getElementById("demo").innerHTML=v;
+						 document.getElementById("demo").innerHTML="<p>IMC: " + v + "</p>";
 						 }
 						 </script>
 						 <script>
@@ -86,7 +86,8 @@
 						  {
 						  b="3500";
 						  }
-						 document.getElementById("imc").innerHTML=b;
+
+						 document.getElementById("imc").innerHTML="<p>calorias: " + b + "</p>"; 
 						 }
 						 </script>
 						 <br>
@@ -102,7 +103,7 @@
 				<div class="container-login100-form-btn">					
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<a class="txt2" href="../views/inicio.php">
+							<a class="txt2" href="../views/index.html">
 							<button class="login100-form-btn" type="Submit" name="datos" id="datos" >
 								Regresar al inicio
 							</button>
