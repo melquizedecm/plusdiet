@@ -52,14 +52,13 @@
 						<input class="input100" type="text" name="Ingredientes de producto" >
 						<span class="focus-input100" data-placeholder="Cantidades e ingredientes del platillo"></span>
 					</div>					
-					<br>
-					<br>
-					<br>
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button class="login100-form-btn" type="Submit" name="datos" id="datos" >
-								Guardar
+									<a class="login100-form-btn" href="../views/menu.php">
+								Guardar y continuar
+							</a>
 							</button>
 						</div>
 					</div>
