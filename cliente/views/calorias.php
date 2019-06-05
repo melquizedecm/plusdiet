@@ -34,9 +34,9 @@
 					<center><h3 style="color:#6B9D3D">Consumo De Calorias</h3></center>
 					<br>
 					<br>
-					<center><div>
+					<!--<center><div>
 						<img src="../images/bascula.gif">
-						<br>
+						<br>-->
 						<div class="wrap-input100 validate-input" data-validate = "Peso Requerido">
 							<input class="input100" type="number" id="peso" value="">
 							<label class="focus-input100" data-placeholder="Peso (Kg)"></label>

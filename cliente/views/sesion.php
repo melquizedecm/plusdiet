@@ -26,15 +26,15 @@
 			<img src="../images/logo.png">
 		</span>
 		<div class="wrap-input100 validate-input" data-validate = "Usuario Requerido">
-			<input class="input100" type="text" name="username">
-			<label class="focus-input100" data-placeholder="Usuario"></label>
+			<input class="input100" type="text" name="username" placeholder="Usuario" >
+			<!--<label class="" data-placeholder="Usuario"></label>-->
 		</div>
 		<div class="wrap-input100 validate-input" data-validate="Contraseña Requerido">
 			<span class="btn-show-pass">
 			<i class="zmdi zmdi-eye"></i>
 			</span>
-			<input class="input100" type="password" name="password">
-			<label class="focus-input100" data-placeholder="Contraseña"></label>
+			<input class="input100" type="password" name="password" placeholder="Contraseña">
+			<!--<label class="focus-input100" data-placeholder="Contraseña"></label>-->
 		</div>
 		<div class="container-login100-form-btn">
 			<div class="wrap-login100-form-btn">

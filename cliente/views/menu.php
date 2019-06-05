@@ -32,30 +32,25 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" method="post" id="datos">
-					<center><h3 style="color:#02b317">Ingresa Tu Menu</h3></center>
+					<center><h3 style="color:#02b317">Ingresa Tu Orden</h3></center>
 					<br>
 					<br>
 					<div class="wrap-input100 validate-input" data-validate = "Campo Requerido">
-						<input class="input100" type="number" name="Porción de origen animal" >
-						<span class="focus-input100" data-placeholder="Porción de origen animal"></span>
+						<input  class="input100" name="Nombre del platillo" ></input>
+						<span class="focus-input100" data-placeholder="Nombre del platillo"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Campo Requerido">
-						<input class="input100" type="number" name="Porción de verduras" >
-						<span class="focus-input100" data-placeholder="Porción de verduras"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate = "Campo Requerido">
-						<input class="input100" type="number" step="0.01" name="Porción de frutas" >
-						<span class="focus-input100" data-placeholder="Porción de frutas"></span>
+						<span class="focus-input100" data-placeholder="Día de entrega"></span>
+						<br>
+						<input class="input100" type="date" name="Ingredientes de producto" >
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Campo Requerido">
-						<input class="input100" type="number" name="Porción de leguminosas" >
-						<span class="focus-input100" data-placeholder="Peso"></span>
+						<input class="input100" type="number" name="Hora de entrega" >
+						<span class="focus-input100" data-placeholder="Hora de entrega"></span>
 					</div>
-
 					<div class="wrap-input100 validate-input" data-validate = "Campo Requerido">
-						<input class="input100" type="number" step="0.01" name="Porción de cereales" >
-						<span class="focus-input100" data-placeholder="Porción de cereales"></span>
+						<input class="input100" type="text" name="Ingredientes de producto" >
+						<span class="focus-input100" data-placeholder="Cantidades e ingredientes del platillo"></span>
 					</div>					
 					<br>
 					<br>
@@ -68,6 +63,14 @@
 							</button>
 						</div>
 					</div>
+					<div class="container-login100-form-btn">					
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<a class="login100-form-btn" href="../views/index.html">
+							Regresar al inicio
+							</a>
+						</div>
+					</div>						
 					<div class="text-center p-t-115">
 						<br>
 						<br>
@@ -95,4 +98,4 @@
 	<script src="../js/main.js"></script>
 
 </body>
-</html>	
+</html>
