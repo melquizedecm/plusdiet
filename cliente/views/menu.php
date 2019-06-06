@@ -32,8 +32,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" method="post" id="datos">
-					<center><h3 style="color:#02b317">Ingresa Tu Orden</h3></center>
-					<br>
+					<center><h3 style="color:#02b317">Ingresa tu orden</h3></center>
 					<br>
 					<div class="wrap-input100 validate-input" data-validate = "Campo Requerido">
 						<input  class="input100" name="Nombre del platillo" ></input>
@@ -45,18 +44,21 @@
 						<input class="input100" type="date" name="Ingredientes de producto" >
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Campo Requerido">
-						<input class="input100" type="number" name="Hora de entrega" >
+						<input class="input100" type="text" name="Hora de entrega" >
 						<span class="focus-input100" data-placeholder="Hora de entrega"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Campo Requerido">
-						<input class="input100" type="text" name="Ingredientes de producto" >
+						<!--<input class="input100" type="text" name="Ingredientes de producto" >-->
 						<span class="focus-input100" data-placeholder="Cantidades e ingredientes del platillo"></span>
+						<br>
+						<br>
+						<textarea rows="4" cols="35" name="Description"> </textarea>
 					</div>					
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button class="login100-form-btn" type="Submit" name="datos" id="datos" >
-									<a class="login100-form-btn" href="../views/menu.php">
+									<a class="login100-form-btn" href="../views/menu2.php">
 								Guardar y continuar
 							</a>
 							</button>
