@@ -44,20 +44,17 @@
 						<input class="input100" type="date" name="inputFecha" >
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Campo Requerido">
-						<input class="input100" type="text" name="Hora de entrega" >
+						<input class="input100" type="text" name="inputHora" >
 						<span class="focus-input100" data-placeholder="Hora de entrega"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Campo Requerido">
-						<!--<input class="input100" type="text" name="Ingredientes de producto" >-->
+						<textarea rows="4" cols="35" class="input100" type="text" name="inputDescripcion"> </textarea>
 						<span class="focus-input100" data-placeholder="Cantidades e ingredientes del platillo"></span>
-						<br>
-						<br>
-						<textarea rows="4" cols="35" name="Description"> </textarea>
-					</div>					
+											</div>					
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn" type="Submit" name="datos" id="datos" >
+							<button class="login100-form-btn" type="Submit" name="datos" id="datos" >Guardar y continuar 
 									<!--<a class="login100-form-btn" href="../views/menu2.php">
 								Guardar y continuar
 							</a>-->
