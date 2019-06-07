@@ -68,6 +68,9 @@
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
+            document.getElementById('inputLatitud').value=pos.lat;
+            document.getElementById('inputLongitud').value=pos.lng;
+
 
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
@@ -80,6 +83,14 @@
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
         }
+
+         google.maps.event.addListener(map, 'click', function(event) {
+         var latLong=event.latLng;	
+         var arrayCadena=latLong.split(".");
+         alert(arrayCadena[0]);
+
+   // marker = new google.maps.Marker({position: event.latLng, map: map});
+});
       }
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -91,19 +102,23 @@
 
         
       }
+
+     
     </script>
-					<form class="login100-form validate-form" method="post" id="datos">
+					<form action="../controllers/Menu2.php" class="login100-form validate-form" method="post" id="datos">
 					<div class="wrap-input100 validate-input" data-validate = "Campo Requerido">
-						<input  class="input100" name="Referencias" ></input>
+						<input  name="inputLatitud" type="hidden" id="inputLatitud"></input>
+						<input  name="inputLongitud" type="hidden" id="inputLongitud"></input>
+						<input  class="input100" name="inputReferencia" ></input>
 						<span class="focus-input100" data-placeholder="Referencias"></span>
 					</div>				
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button class="login100-form-btn" type="Submit" name="datos" id="datos" >
-									<a class="login100-form-btn" href="../views/index.html">
+								<!--	<a class="login100-form-btn" href="../views/index.html">
 								Guardar y finalizar
-							</a>
+							</a>-->
 							</button>
 						</div>
 					</div>

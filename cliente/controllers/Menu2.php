@@ -2,10 +2,10 @@
 
 //1. recibir datos
 
-$nombre=$_POST['inputNombre'];
-$descripcion=$_POST['inputDescripcion'];
-$Fecha=$_POST['inputFecha'];
-$Hora=$_POST['inputHora'];
+$Latitud=$_POST['inputLatitud'];
+$Longitud=$_POST['inputLongitud'];
+$Referencia=$_POST['inputReferencia'];
+
 
 //2. conectarme
 	$db = mysqli_connect('localhost','root','','diet');
@@ -17,8 +17,7 @@ $fila = mysqli_fetch_assoc($result);
 $id= $fila['id'];
 
 //3. guardar los datos
-	$sql="UPDATE solicitud SET id_usuario='6', nombre='".$nombre."', descripcion='".$descripcion."',fecha_entrega='".$Fecha."',horario='".$Hora."' WHERE id='".$id."'";
+	$sql="UPDATE solicitud SET latitud='".$Latitud."', longitud='".$Longitud."', referencia='".$Referencia."' WHERE id='".$id."'";
 	mysqli_query($db, $sql);
 //4. regresar un mensaje 
-header("Location: ../views/menu2.php");
-
+//header("Location: ../views/pedidos.html");
