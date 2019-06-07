@@ -86,8 +86,9 @@
 
          google.maps.event.addListener(map, 'click', function(event) {
          var latLong=event.latLng;	
-         var arrayCadena=latLong.split(".");
-         alert(arrayCadena[0]);
+         alert(latLong);
+        // var arrayCadena=latLong.split(".");
+         //alert(arrayCadena[0]);
 
    // marker = new google.maps.Marker({position: event.latLng, map: map});
 });
