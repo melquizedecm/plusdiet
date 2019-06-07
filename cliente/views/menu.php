@@ -31,17 +31,17 @@
 		<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" method="post" id="datos">
+				<form action="../controllers/Menu_.php" class="login100-form validate-form" method="post" id="datos">
 					<center><h3 style="color:#02b317">Ingresa tu orden</h3></center>
 					<br>
 					<div class="wrap-input100 validate-input" data-validate = "Campo Requerido">
-						<input  class="input100" name="Nombre del platillo" ></input>
+						<input  class="input100" name="inputNombre" ></input>
 						<span class="focus-input100" data-placeholder="Nombre del platillo"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Campo Requerido">
 						<span class="focus-input100" data-placeholder="Día de entrega"></span>
 						<br>
-						<input class="input100" type="date" name="Ingredientes de producto" >
+						<input class="input100" type="date" name="inputFecha" >
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Campo Requerido">
 						<input class="input100" type="text" name="Hora de entrega" >
@@ -58,9 +58,9 @@
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button class="login100-form-btn" type="Submit" name="datos" id="datos" >
-									<a class="login100-form-btn" href="../views/menu2.php">
+									<!--<a class="login100-form-btn" href="../views/menu2.php">
 								Guardar y continuar
-							</a>
+							</a>-->
 							</button>
 						</div>
 					</div>

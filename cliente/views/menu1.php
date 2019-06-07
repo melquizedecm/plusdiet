@@ -31,33 +31,30 @@
 		<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" method="post" id="datos">
+				<form action="../controllers/Menu1.php" class="login100-form validate-form" method="post" id="datos">
 					<center><h3 style="color:#02b317">Elige tu comida</h3></center>
 					<br>
 					<br>
 					<br>
 					<div class="">
-						<input type="radio" name="Sex" class="form-input" value="0" id="Sex"> Desayuno
+						<input type="radio" name="inputDesayuno" class="form-input" value="1" id="idDesayuno"> Desayuno
 						<p>Horario 8:00 am-11:00 am</p><br>
 					</div>
 					<div class="">
-						<input type="radio" name="Sex" class="form-input" value="1" id="Sex"> Almuerzo
+						<input type="radio" name="inputAlmuerzo" class="form-input" value="2" id="idAlmuerzo"> Almuerzo
 						<p>Horario 1:00 am-4:00 pm</p><br>
 					</div>
 					<div class="">
-						<input type="radio" name="Sex" class="form-input" value="2" id="Sex"> Cena
+						<input type="radio" name="inputCena" class="form-input" value="3" id="idCena"> Cena
 						<p>Horario 6:00 pm-9:00 pm</p><br>
 					</div>
-
-					<br>
-					<br>
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn" type="Submit" name="datos" id="datos" >
-									<a class="login100-form-btn" href="../views/menu.php">
+							<button class="login100-form-btn" type="Submit" name="datos" id="datos" >Guardar
+<!--									<a class="login100-form-btn" href="../views/menu.php">
 								Guardar y continuar
-							</a>
+							</a>-->
 							</button>
 						</div>
 					</div>
