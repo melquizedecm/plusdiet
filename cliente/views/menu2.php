@@ -116,7 +116,7 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn" type="Submit" name="datos" id="datos" >
+							<button class="login100-form-btn" type="Submit" name="datos" id="datos" >Guardar y finalizar 
 								<!--	<a class="login100-form-btn" href="../views/index.html">
 								Guardar y finalizar
 							</a>-->

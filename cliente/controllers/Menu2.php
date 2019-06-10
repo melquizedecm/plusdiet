@@ -20,4 +20,4 @@ $id= $fila['id'];
 	$sql="UPDATE solicitud SET latitud='".$Latitud."', longitud='".$Longitud."', referencia='".$Referencia."' WHERE id='".$id."'";
 	mysqli_query($db, $sql);
 //4. regresar un mensaje 
-//header("Location: ../views/pedidos.html");
+header("Location: ../views/index.html");

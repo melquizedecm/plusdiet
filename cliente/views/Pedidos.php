@@ -93,7 +93,7 @@ $(document).ready(function(){
 			      	  echo "</tr>";
 			      	echo "<td>".$value['nombre']."</td>";
 			      	echo "<td>".$value['precio']."</td>";
-			      	echo "<td>".$value['nombre']."</td>";
+			      	echo "<td>".$value['referencia']."</td>";
 			      	echo "</tr>";
 			      }
 
