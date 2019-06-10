@@ -26,17 +26,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/util.css">
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
 <!--===============================================================================================-->
-    <style>
-       /* Set the size of the div element that contains the map */
-      #map {
-        height: 400px;  /* The height is 400 pixels */
-        width: 100%;  /* The width is the width of the web page */
-       }
-    </style>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDREk_YdULofxlx4E8Ka98yR5Ut7GgJFrU&callback=initMap">
-    </script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?3.39"></script>
+
  
 
 </head>
@@ -45,72 +35,73 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 					<center><h4 style="color:#02b317">Referencias de la ubicación</h4></center>
-					<div id="map" style="width: 300px; height:300px;"></div>
+                <br>
+					<div id="map" style="width: 300px; height:280px;"></div>
 					<br>
-					<br>
-					<script>
-      // Note: This example requires that you consent to location sharing when
-      // prompted by your browser. If you see the error "The Geolocation service
-      // failed.", it means you probably did not give permission for the browser to
-      // locate you.
-      var map, infoWindow;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 15
-        });
-        infoWindow = new google.maps.InfoWindow;
-
-        // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            document.getElementById('inputLatitud').value=pos.lat;
-            document.getElementById('inputLongitud').value=pos.lng;
+					<br><div id="mensaje" class="text-center"></div>
+                <div id="map" class="text-center"></div>
 
 
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            infoWindow.open(map);
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
 
-         google.maps.event.addListener(map, 'click', function(event) {
-         var latLong=event.latLng;	
-         alert(latLong);
-        // var arrayCadena=latLong.split(".");
-         //alert(arrayCadena[0]);
+                <script type="text/javascript"
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDREk_YdULofxlx4E8Ka98yR5Ut7GgJFrU&callback=initMap"></script>
 
-   // marker = new google.maps.Marker({position: event.latLng, map: map});
-});
-      }
+                <script type="text/javascript">
+                    var x, y;
 
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-        infoWindow.open(map);
+                    function getLocation() {
+                        if (navigator.geolocation) {
+                            var div = document.getElementById('mensaje');
+                            div.innerHTML = " ";
+                            navigator.geolocation.getCurrentPosition(mapas);
+                        }
+                        else {
+                            {
+                                var div = document.getElementById('mensaje');
+                                div.innerHTML = "Error";
+                            }
+                        }
+                    }
 
-        
-      }
+                    function showPosition(position) {
+                        x = position.coords.latitude;
+                        y = position.coords.longitude
+                    }
 
-     
-    </script>
+
+                    function mapas(position) {
+                        var div = document.getElementById('mensaje');
+                        //div.innerHTML=position.coords.latitude + '   ' + position.coords.longitude;
+                        var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            center: latlng,
+                            zoom: 15,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP,
+                        });
+                        var marker = new google.maps.Marker({
+                            position: latlng,
+                            map: map,
+                            title: 'Set lat/lon values for this property',
+                            draggable: true
+                        });
+                        google.maps.event.addListener(marker, 'dragend', function (a) {
+                            console.log(a);
+                            document.getElementById('inputLatitud').value = a.latLng.lat().toFixed(4);
+                            document.getElementById('inputLongitud').value = a.latLng.lng().toFixed(4);
+                        });
+                    }
+
+                    window.onload = getLocation();
+                </script>
+                <br>
+
+
 					<form action="../controllers/Menu2.php" class="login100-form validate-form" method="post" id="datos">
 					<div class="wrap-input100 validate-input" data-validate = "Campo Requerido">
-						<input  name="inputLatitud" type="hidden" id="inputLatitud"></input>
-						<input  name="inputLongitud" type="hidden" id="inputLongitud"></input>
-						<input  class="input100" name="inputReferencia" ></input>
+						<input  name="inputLatitud" type="hidden" id="inputLatitud">
+						<input  name="inputLongitud" type="hidden" id="inputLongitud">
+
+						<input  class="input100" name="inputReferencia" >
 						<span class="focus-input100" data-placeholder="Referencias"></span>
 					</div>				
 					<div class="container-login100-form-btn">
@@ -123,26 +114,14 @@
 							</button>
 						</div>
 					</div>
-					<div class="container-login100-form-btn">					
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<!--<a class="login100-form-btn" href="../views/index.html">
-							Regresar al inicio
-							</a>-->
-						</div>
-					</div>						
-					<div class="text-center p-t-115">
-						<br>
-						<br>
-					</div>
+
 				</form>
 				
 				
     
 			</div>
 		</div>
-	</div> 
-	<div id="dropDownSelect1"></div>
+	</div>
 <!--===============================================================================================-->
 	<script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
