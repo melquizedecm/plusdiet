@@ -93,7 +93,7 @@
 		if (count($errors) == 0) {
 			$password = md5($password);
 
-			$query = "SELECT * FROM usuarios WHERE username='$username' AND password='$password' LIMIT 1";
+			$query = "SELECT * FROM usuarios WHERE username='".$username."' AND password='".$password."' LIMIT 1";
 			$results = mysqli_query($db, $query);
 
 			if (mysqli_num_rows($results) == 1) { // user found
@@ -102,6 +102,7 @@
 				if ($logged_in_user['status'] == '1') {
 
 					$_SESSION['user'] = $logged_in_user;
+					$_SESSION['usuario']= $logged_in_user;
 					$_SESSION['success']  = "Ahora está conectado";
 					header('location: ../views/index.html');		  
 				}else{

@@ -1,3 +1,17 @@
+<?php
+session_start();
+if (isset($_SESSION['usuario'])){
+	$usuario=$_SESSION['usuario'];
+	echo $usuario['id'];
+	echo $usuario['username'];
+	
+	//Seleccionar la lista de pedidos
+		//1. conectarme
+	$db = mysqli_connect('localhost','root','','diet');
+//2. selecciono los datos del pedido
+	$sql="SELECT * FROM solicitud WHERE id_usuario='".$usuario['id']."'";
+	$tablaPedidos=mysqli_query($db, $sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,16 +86,22 @@ $(document).ready(function(){
 			      </tr>
 			    </thead>
 			    <tbody>
-			      </tr>              
-                    <td>Ejemplo de comida</td>
-                    <td>Ejemplo de precio</td>
-                    <td>Confirmar</td>
-                </tr>
-                <tr>
-                    <td>Ejemplo de comida 2</td>
-                    <td>Ejemplo de precio 2</td>
-                    <td>Confirmar</td>
-                </tr>
+			      <?php
+			      echo "</tr>";
+
+			      foreach ($tablaPedidos as $value) {
+			      	  echo "</tr>";
+			      	echo "<td>".$value['nombre']."</td>";
+			      	echo "<td>".$value['precio']."</td>";
+			      	echo "<td>".$value['nombre']."</td>";
+			      	echo "</tr>";
+			      }
+
+			      
+			      ?>
+
+
+                    
 			    </tbody>
 		  	</table>
 		</div>           
@@ -102,4 +122,10 @@ $(document).ready(function(){
 </div>          
         
 </body>
-</html>                                		                            
+</html> 
+
+<?php
+}
+else{
+	echo "no hubo sesion";
+}                              		                            
