@@ -8,7 +8,7 @@ $Referencia=$_POST['inputReferencia'];
 
 
 //2. conectarme
-	$db = mysqli_connect('localhost','root','','diet');
+	$db = mysqli_connect('localhost','labora53_diet','plusdiet135790','labora53_diet');
 
 //seleccion el  id que voy a editar...
 $selectId= "SELECT MAX(id) as id FROM solicitud";

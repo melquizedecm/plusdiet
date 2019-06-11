@@ -7,7 +7,7 @@ if (isset($_SESSION['usuario'])){
 	
 	//Seleccionar la lista de pedidos
 		//1. conectarme
-	$db = mysqli_connect('localhost','root','','diet');
+	$db = mysqli_connect('localhost','labora53_diet','plusdiet135790','labora53_diet');
 //2. selecciono los datos del pedido
 	$sql="SELECT * FROM solicitud WHERE id_usuario='".$usuario['id']."'";
 	$tablaPedidos=mysqli_query($db, $sql);
